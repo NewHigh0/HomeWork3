@@ -1,30 +1,33 @@
-﻿#include <iostream>
-#include "String.h"
+﻿#include "Array.h"
+#include <iostream>
 
 int main() {
-    String s1("Hello");
-    String s2("World");
-    String s3;
+    srand(time(0));
 
-    s3 = s1;
-    std::cout << "s3 = " << s3 << std::endl;
+    Array arr1(5, 1, 10);
+    Array arr2(5, 5, 15);
 
-    String s4 = s1 + s2;
-    std::cout << "s1 + s2: " << s4 << std::endl;
+    std::cout << "Array 1: " << arr1 << std::endl;
+    std::cout << "Array 2: " << arr2 << std::endl;
 
-    s1 += s2;
-    std::cout << "s1 += s2: " << s1 << std::endl;
+    Array arr3 = arr1;
+    std::cout << "copy of arr1: " << arr3 << std::endl;
 
-    char ch = s1[1];
-    std::cout << "Character at index 1 in s1: " << ch << std::endl;
+    Array arr4 = arr1 + arr2;
+    std::cout << "arr1 + arr2: " << arr4 << std::endl;
 
-    std::cout << "s1 == s3: " << (s1 == s3 ? "true" : "false") << std::endl;
+    arr1 += arr2;
+    std::cout << "arr1 += arr2: " << arr1 << std::endl;
 
-    std::cout << "s1 != s2: " << (s1 != s2 ? "true" : "false") << std::endl;
+    std::cout << "arr1[2] = " << arr1[2] << std::endl;
 
-    std::cout << "s1 > s2: " << (s1 > s2 ? "true" : "false") << std::endl;
+    std::cout << "arr1 == arr3: " << (arr1 == arr3 ? "true" : "false") << std::endl;
 
-    std::cout << "s1 < s2: " << (s1 < s2 ? "true" : "false") << std::endl;
+    std::cout << "arr1 != arr3: " << (arr1 != arr3 ? "true" : "false") << std::endl;
+
+    std::cout << "arr1 > arr2: " << (arr1 > arr2 ? "true" : "false") << std::endl;
+
+    std::cout << "arr1 < arr2: " << (arr1 < arr2 ? "true" : "false") << std::endl;
 
     return 0;
 }
